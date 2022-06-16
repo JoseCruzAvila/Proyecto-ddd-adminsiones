@@ -1,8 +1,9 @@
 package co.com.sofka.admisiones.comite;
 
-import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.admisiones.comite.values.ComiteId;
+import co.com.sofka.domain.generic.Entity;
 
-public class Comite extends AggregateEvent<ComiteId> {
+public class Comite extends Entity<ComiteId> {
 
     protected ComiteId comiteId;
 
