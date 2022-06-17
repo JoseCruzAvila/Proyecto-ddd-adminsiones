@@ -8,7 +8,6 @@ import co.com.sofka.admisiones.aspirante.event.CreatedAspirante;
 import co.com.sofka.admisiones.aspirante.values.AspiranteId;
 import co.com.sofka.admisiones.values.Nombre;
 import co.com.sofka.admisiones.values.Email;
-import co.com.sofka.admisiones.values.Password;
 import co.com.sofka.admisiones.values.Usuario;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
