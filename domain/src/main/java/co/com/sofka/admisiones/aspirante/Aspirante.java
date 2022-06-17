@@ -41,4 +41,8 @@ public class Aspirante extends AggregateEvent<AspiranteId> {
 
         return aspirante;
     }
+
+    public void actualizarNombre(String nombre) {
+        this.nombre = Nombre.newNombre(nombre);
+    }
 }
