@@ -1,5 +1,6 @@
 package co.com.sofka.admisiones.comite;
 
+<<<<<<< HEAD
 import co.com.sofka.admisiones.comite.values.SecretariaId;
 import co.com.sofka.domain.generic.Entity;
 

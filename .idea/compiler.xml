@@ -10,5 +10,10 @@
         <module name="domain" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="business" target="11" />
+      <module name="ddd-adminsiones" target="1.5" />
+      <module name="domain" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

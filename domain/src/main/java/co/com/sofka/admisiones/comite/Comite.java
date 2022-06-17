@@ -7,8 +7,7 @@ import co.com.sofka.admisiones.comite.values.ComiteId;
 import co.com.sofka.admisiones.comite.values.EvaluadorId;
 import co.com.sofka.admisiones.comite.values.SecretariaId;
 import co.com.sofka.admisiones.cuenta.values.CuentaId;
-import co.com.sofka.admisiones.entregables.Prueba;
-import co.com.sofka.admisiones.entregables.values.Puntaje;
+import co.com.sofka.admisiones.prueba.Prueba;
 import co.com.sofka.domain.generic.AggregateEvent;
 
 import java.util.Objects;
