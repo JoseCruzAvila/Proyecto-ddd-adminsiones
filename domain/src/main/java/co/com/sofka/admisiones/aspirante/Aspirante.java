@@ -25,7 +25,7 @@ public class Aspirante extends AggregateEvent<AspiranteId> {
     protected Cuenta cuenta;
     protected Set<Documento> documentos;
 
-    public Aspirante(AspiranteId documentoIdentidad, Nombre nombre, Email email, Usuario usuario, Password password) {
+    public Aspirante(AspiranteId documentoIdentidad, Nombre nombre, Email email, Usuario usuario) {
         super(documentoIdentidad);
         subscribe(new AspiranteChange(this));
         appendChange(new CreatedAspirante(nombre, usuario, email)).apply();
