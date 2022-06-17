@@ -1,4 +1,4 @@
-package co.com.sofka.admisiones.evaluador.values;
+package co.com.sofka.admisiones.comite.values;
 
 import co.com.sofka.domain.generic.Identity;
 
