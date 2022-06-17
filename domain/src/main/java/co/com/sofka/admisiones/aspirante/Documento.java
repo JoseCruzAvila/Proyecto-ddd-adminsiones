@@ -9,7 +9,7 @@ public class Documento extends Entity<DocumentoId> {
     private Nombre nombre;
     private Contenido contenido;
 
-    public Documento(DocumentoId entityId) {
+    public Documento(DocumentoId entityId, Nombre nombre, Contenido contenido) {
         super(entityId);
     }
 }

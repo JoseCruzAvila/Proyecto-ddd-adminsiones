@@ -2,10 +2,8 @@ package co.com.sofka.admisiones.comite.events;
 
 import co.com.sofka.admisiones.values.Nombre;
 import co.com.sofka.admisiones.comite.values.EvaluadorId;
-import co.com.sofka.admisiones.cuenta.values.CuentaId;
+import co.com.sofka.admisiones.values.CuentaId;
 import co.com.sofka.domain.generic.DomainEvent;
-
-import java.util.UUID;
 
 public class EvaluadorAgregado extends DomainEvent {
 
@@ -24,7 +22,7 @@ public class EvaluadorAgregado extends DomainEvent {
         return evaluadorId;
     }
 
-    public Nombre getNombreombre(){
+    public Nombre getNombre(){
         return nombre;
     }
 
