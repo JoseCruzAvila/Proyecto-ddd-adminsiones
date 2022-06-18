@@ -12,6 +12,12 @@ public class Descripcion implements ValueObject<String> {
         if (this.descripcion.isBlank()){
             throw new IllegalArgumentException("El campo descripcion no puede ser vacia");
         }
+        if (this.descripcion.length()>6){
+            throw new IllegalArgumentException("La descripcion debe contener mas de 6 caracteres para ser valida");
+        }
+        if (this.descripcion.length()<100){
+            throw new IllegalArgumentException("La descripcion no debe contener mas de 100 caracteres para ser valida");
+        }
     }
 
     @Override

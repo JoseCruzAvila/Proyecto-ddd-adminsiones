@@ -10,7 +10,9 @@ import co.com.sofka.admisiones.prueba.values.PruebaId;
 import co.com.sofka.admisiones.prueba.values.Puntaje;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.AggregateRoot;
+import co.com.sofka.domain.generic.DomainEvent;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Prueba extends AggregateEvent<PruebaId> {
@@ -27,6 +29,12 @@ public class Prueba extends AggregateEvent<PruebaId> {
     private Prueba(PruebaId pruebaId){
         super(pruebaId);
         subscribe(new PruebaChange(this));
+    }
+
+    public static Prueba from(PruebaId pruebaId, List<DomainEvent> events){
+        var prueba = new Prueba(pruebaId);
+        events.forEach(prueba::applyEvent);
+        return prueba;
     }
 
     public void actualizarPuntaje(Puntaje puntaje){
