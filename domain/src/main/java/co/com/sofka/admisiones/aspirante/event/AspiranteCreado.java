@@ -1,17 +1,17 @@
 package co.com.sofka.admisiones.aspirante.event;
 
-import co.com.sofka.admisiones.values.Nombre;
-import co.com.sofka.admisiones.values.Email;
-import co.com.sofka.admisiones.values.Usuario;
+import co.com.sofka.admisiones.general.values.Email;
+import co.com.sofka.admisiones.general.values.Nombre;
+import co.com.sofka.admisiones.general.values.Usuario;
 import co.com.sofka.domain.generic.DomainEvent;
 
-public class CreatedAspirante extends DomainEvent {
+public class AspiranteCreado extends DomainEvent {
     private final Nombre nombre;
     private final Usuario usuario;
     private final Email email;
 
-    public CreatedAspirante(Nombre nombre, Usuario usuario, Email email) {
-        super("aspirante.CreatedAspirante");
+    public AspiranteCreado(Nombre nombre, Usuario usuario, Email email) {
+        super("aspirante.AspiranteCreado");
         this.nombre = nombre;
         this.usuario = usuario;
         this.email = email;
