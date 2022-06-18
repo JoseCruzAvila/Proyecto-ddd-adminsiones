@@ -16,5 +16,6 @@
   <modules>
     <module>business</module>
     <module>domain</module>
+      <module>usecase</module>
   </modules>
 </project>
