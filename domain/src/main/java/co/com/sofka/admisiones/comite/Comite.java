@@ -2,12 +2,13 @@ package co.com.sofka.admisiones.comite;
 
 import co.com.sofka.admisiones.aspirante.values.AspiranteId;
 import co.com.sofka.admisiones.aspirante.values.DocumentoId;
-import co.com.sofka.admisiones.values.Nombre;
 import co.com.sofka.admisiones.comite.events.*;
 import co.com.sofka.admisiones.comite.values.ComiteId;
 import co.com.sofka.admisiones.comite.values.EvaluadorId;
 import co.com.sofka.admisiones.comite.values.SecretariaId;
-import co.com.sofka.admisiones.values.CuentaId;
+import co.com.sofka.admisiones.general.Cuenta;
+import co.com.sofka.admisiones.general.events.NombreActualizado;
+import co.com.sofka.admisiones.general.values.Nombre;
 import co.com.sofka.admisiones.prueba.Prueba;
 import co.com.sofka.admisiones.prueba.values.MateriaId;
 import co.com.sofka.admisiones.prueba.values.PruebaId;
@@ -38,11 +39,11 @@ public class Comite extends AggregateEvent<ComiteId> {
         subscribe(new ComiteChange(this));
     }
 
-    public void agregarEvaluador(EvaluadorId evaluadorId, Nombre nombre, CuentaId cuentaId){
+    public void agregarEvaluador(EvaluadorId evaluadorId, Nombre nombre, Cuenta cuenta){
         Objects.requireNonNull(evaluadorId);
         Objects.requireNonNull(nombre);
         Objects.requireNonNull(evaluadorId);
-        appendChange(new EvaluadorAgregado(evaluadorId,nombre,cuentaId)).apply();
+        appendChange(new EvaluadorAgregado(evaluadorId,nombre)).apply();
     }
 
     public void agregarSecretaria(SecretariaId secretariaId){
@@ -57,12 +58,12 @@ public class Comite extends AggregateEvent<ComiteId> {
         appendChange(new PruebaAgregada(pruebaId,aspiranteId,materiaId)).apply();
     }
 
-    public void agregarAspirante(AspiranteId aspiranteId, Nombre nombre, CuentaId cuentaId, Set<DocumentoId> documentos){
+    public void agregarAspirante(AspiranteId aspiranteId, Nombre nombre, Cuenta cuenta, Set<DocumentoId> documentos){
         Objects.requireNonNull(aspiranteId);
         Objects.requireNonNull(nombre);
-        Objects.requireNonNull(cuentaId);
+        Objects.requireNonNull(cuenta);
         Objects.requireNonNull(documentos);
-        appendChange(new AspiranteAgregado(aspiranteId,nombre,cuentaId,documentos)).apply();
+        appendChange(new AspiranteAgregado(aspiranteId,nombre,cuenta,documentos)).apply();
     }
 
     public Optional<Evaluador> getEvaluadorPorId(EvaluadorId evaluadorId){
@@ -82,7 +83,7 @@ public class Comite extends AggregateEvent<ComiteId> {
     }
 
     public void cambiarNombre(Nombre nombre){
-        appendChange(new NombreCambiado(nombre)).apply();
+        appendChange(new NombreActualizado(nombre)).apply();
     }
 
     public ComiteId comiteId() {

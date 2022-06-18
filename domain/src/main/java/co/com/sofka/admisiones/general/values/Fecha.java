@@ -1,4 +1,4 @@
-package co.com.sofka.admisiones.values;
+package co.com.sofka.admisiones.general.values;
 
 import java.time.LocalDate;
 

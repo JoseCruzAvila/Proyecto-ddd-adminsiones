@@ -1,13 +1,13 @@
-package co.com.sofka.admisiones.comite.events;
+package co.com.sofka.admisiones.general.events;
 
 import co.com.sofka.admisiones.general.values.Nombre;
 import co.com.sofka.domain.generic.DomainEvent;
 
-public class ComiteCreado extends DomainEvent {
-
+public class NombreActualizado extends DomainEvent {
     private final Nombre nombre;
-    public ComiteCreado(Nombre nombre) {
-        super("sofka.comite.comitecreado");
+
+    public NombreActualizado(Nombre nombre) {
+        super("NombreActualizado");
         this.nombre = nombre;
     }
 

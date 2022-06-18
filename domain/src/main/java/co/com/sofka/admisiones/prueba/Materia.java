@@ -1,8 +1,8 @@
 package co.com.sofka.admisiones.prueba;
 
+import co.com.sofka.admisiones.general.values.Contenido;
+import co.com.sofka.admisiones.general.values.Nombre;
 import co.com.sofka.admisiones.prueba.values.MateriaId;
-import co.com.sofka.admisiones.values.Contenido;
-import co.com.sofka.admisiones.values.Nombre;
 import co.com.sofka.domain.generic.Entity;
 
 import java.util.Objects;
