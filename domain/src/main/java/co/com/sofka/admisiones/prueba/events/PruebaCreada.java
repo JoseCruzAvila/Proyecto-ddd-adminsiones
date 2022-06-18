@@ -1,6 +1,5 @@
 package co.com.sofka.admisiones.prueba.events;
 
-import co.com.sofka.admisiones.aspirante.Aspirante;
 import co.com.sofka.admisiones.aspirante.values.AspiranteId;
 import co.com.sofka.admisiones.prueba.values.MateriaId;
 import co.com.sofka.admisiones.prueba.values.Puntaje;

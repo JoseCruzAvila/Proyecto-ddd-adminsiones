@@ -1,7 +1,7 @@
 package co.com.sofka.admisiones.comite;
 
+import co.com.sofka.admisiones.aspirante.Aspirante;
 import co.com.sofka.admisiones.aspirante.values.AspiranteId;
-import co.com.sofka.admisiones.aspirante.values.DocumentoId;
 import co.com.sofka.admisiones.comite.events.*;
 import co.com.sofka.admisiones.comite.values.ComiteId;
 import co.com.sofka.admisiones.comite.values.EvaluadorId;
@@ -24,7 +24,7 @@ public class Comite extends AggregateEvent<ComiteId> {
     protected Set<Evaluador> evaluadores;
     protected SecretariaId secretariaId;
     protected Set<Prueba> pruebas;
-    protected Set<AspiranteId> aspirantes;
+    protected Set<Aspirante> aspirantes;
 
     protected Nombre nombre;
 
@@ -40,10 +40,7 @@ public class Comite extends AggregateEvent<ComiteId> {
     }
 
     public void agregarEvaluador(EvaluadorId evaluadorId, Nombre nombre, Cuenta cuenta){
-        Objects.requireNonNull(evaluadorId);
-        Objects.requireNonNull(nombre);
-        Objects.requireNonNull(evaluadorId);
-        appendChange(new EvaluadorAgregado(evaluadorId,nombre)).apply();
+        appendChange(new EvaluadorAgregado(evaluadorId, nombre, cuenta)).apply();
     }
 
     public void agregarSecretaria(SecretariaId secretariaId){
@@ -58,12 +55,8 @@ public class Comite extends AggregateEvent<ComiteId> {
         appendChange(new PruebaAgregada(pruebaId,aspiranteId,materiaId)).apply();
     }
 
-    public void agregarAspirante(AspiranteId aspiranteId, Nombre nombre, Cuenta cuenta, Set<DocumentoId> documentos){
-        Objects.requireNonNull(aspiranteId);
-        Objects.requireNonNull(nombre);
-        Objects.requireNonNull(cuenta);
-        Objects.requireNonNull(documentos);
-        appendChange(new AspiranteAgregado(aspiranteId,nombre,cuenta,documentos)).apply();
+    public void agregarAspirante(Aspirante aspirante){
+        appendChange(new AspiranteAgregado(aspirante)).apply();
     }
 
     public Optional<Evaluador> getEvaluadorPorId(EvaluadorId evaluadorId){
@@ -102,7 +95,7 @@ public class Comite extends AggregateEvent<ComiteId> {
         return pruebas;
     }
 
-    public Set<AspiranteId> getAspirantes() {
+    public Set<Aspirante> getAspirantes() {
         return aspirantes;
     }
 
