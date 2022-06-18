@@ -1,15 +1,12 @@
 package co.com.sofka.admisiones.prueba;
 
-import co.com.sofka.admisiones.aspirante.Aspirante;
 import co.com.sofka.admisiones.aspirante.values.AspiranteId;
-import co.com.sofka.admisiones.comite.ComiteChange;
 import co.com.sofka.admisiones.prueba.events.PruebaCreada;
 import co.com.sofka.admisiones.prueba.events.PuntajeActualizado;
 import co.com.sofka.admisiones.prueba.values.MateriaId;
 import co.com.sofka.admisiones.prueba.values.PruebaId;
 import co.com.sofka.admisiones.prueba.values.Puntaje;
 import co.com.sofka.domain.generic.AggregateEvent;
-import co.com.sofka.domain.generic.AggregateRoot;
 import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.List;
